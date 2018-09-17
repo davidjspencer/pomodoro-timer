@@ -32,11 +32,7 @@
         </h2>
 
       </div>
-      <div class="timer--counter">
-        <div class="pomodoro-timer" :style="colorFont">
-          <h3><span>{{ min }}:{{ sec }}</span> <br>Time left of {{ this.pomodoroState }}</h3>
-        </div>
-      </div>
+    
       <!-- <div class="well" :class="{ 'hidden': pomodoroState === 'work' }">
         <img :src="'http://thecatapi.com/api/images/get?type=gif&size=med' + timestamp" />
       </div> -->
@@ -44,6 +40,7 @@
         <div class="circle">
           <div class="second" :style="rotateObj">&nbsp;</div>
           <div class="minute" :style="minuteHeight"></div>
+          <h3 class="center-circle"><span>{{ min }}:{{ sec }}</span><br>{{ title }}</h3>
         </div>
 
       </div>
