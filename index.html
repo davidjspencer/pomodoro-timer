@@ -19,33 +19,24 @@
           <span>Pomodoro </span>Timer
         </h1>
         <h2>
-        <button :disabled="state === 'started'" @click="start()">
-          &#9654;
-        </button>
-        <button :disabled="state !== 'started'" @click="pause()">
-          &#10073;&#10073;
-        </button>
-        <button :disabled="state !== 'started' && state !== 'paused'"
-          @click="stop()">
-          &#9632;
-        </button>
+          <button :disabled="state === 'started'" @click="start()">
+            &#9654;
+          </button>
+          <button :disabled="state !== 'started'" @click="pause()">
+            &#10073;&#10073;
+          </button>
+          <button :disabled="state !== 'started' && state !== 'paused'"
+            @click="stop()">
+            &#9632;
+          </button>
         </h2>
-
       </div>
-      <div class="timer--counter">
-        <div class="pomodoro-timer" :style="colorFont">
-          <h3><span>{{ min }}:{{ sec }}</span> <br>Time left of {{ this.pomodoroState }}</h3>
-        </div>
-      </div>
-      <!-- <div class="well" :class="{ 'hidden': pomodoroState === 'work' }">
-        <img :src="'http://thecatapi.com/api/images/get?type=gif&size=med' + timestamp" />
-      </div> -->
       <div class="timer--clock">
         <div class="circle">
           <div class="second" :style="rotateObj">&nbsp;</div>
           <div class="minute" :style="minuteHeight"></div>
+          <h3 class="center-circle"><span>{{ min }}:{{ sec }}</span><br>{{ title }}</h3>
         </div>
-
       </div>
     </div>
   </div>
