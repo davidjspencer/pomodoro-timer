@@ -1,0 +1,77 @@
+:root {
+  --color: #fecea8;
+  --background: #2a363b; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  color: var(--color);
+  background: var(--background); }
+
+#app {
+  width: 100vw;
+  height: 100vh; }
+
+h3 span {
+  font-weight: 100; }
+
+.timer {
+  height: 100%;
+  display: grid;
+  grid-template: 25% 25% 50% / 1fr 250px 1fr;
+  padding-top: 2em;
+  text-align: center; }
+  .timer .timer--head {
+    grid-row-start: 1;
+    grid-column-start: 2; }
+    .timer .timer--head button {
+      display: inline-block;
+      float: left;
+      width: calc(100% / 3); }
+  .timer .timer--counter {
+    grid-row-start: 2;
+    grid-column-start: 2; }
+  .timer .timer--clock {
+    grid-row-start: 3;
+    grid-column-start: 2;
+    text-align: center; }
+
+.circle {
+  position: relative;
+  display: inline-block;
+  border-radius: 50% 50%;
+  width: 250px;
+  height: 250px;
+  background: white; }
+
+.second {
+  display: inline-block;
+  border-radius: 50% 50%;
+  width: 250px;
+  height: 250px;
+  background: white; }
+
+.second::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  background: #e84a5f;
+  bottom: 50%;
+  left: 50%; }
+
+.minute {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  border-radius: 50% 50%;
+  width: 250px;
+  height: 250px;
+  background: #ff847c;
+  opacity: .5; }
+
+/*# sourceMappingURL=main.css.map */

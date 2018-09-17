@@ -54,8 +54,8 @@ new Vue ({
       }
       return {
         background: backgroundColor,
-        height: (minuteCalc * 100) + 'px',
-        width: (minuteCalc * 100) + 'px'
+        height: (minuteCalc * 250) + 'px', // height / width of circle
+        width: (minuteCalc * 250) + 'px' // needs variable
       }
     },
     colorFont: function () {
@@ -72,7 +72,7 @@ new Vue ({
     start: function () {
       this.state = STATES.STARTED;
       this._tick();
-      this.interval = setInterval(this._tick, 1000); // 1000 = second intervals
+      this.interval = setInterval(this._tick, 1); // 1000 = second intervals
     },
     pause: function () {
       this.state = STATES.PAUSED;

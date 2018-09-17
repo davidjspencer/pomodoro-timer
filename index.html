@@ -5,43 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pomodoro Timer</title>
+  <script src="js/vue.js"></script>
+  <link rel="stylesheet" href="/css/reset.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <div id="app" class="container">
-    <h2>
-      <span>Pomodoro</span>
-      <button :disabled="state === 'started'" @click="start()">
-        <i class="glyphicon glyphicon-play"></i>
-      </button>
-      <button :disabled="state !== 'started'" @click="pause()">
-        <i class="glyphicon glyphicon-pause"></i>
-      </button>
-      <button :disabled="state !== 'started' && state !== 'paused'"
-        @click="stop()">
-        <i class="glyphicon glyphicon-stop"></i>
-      </button>
-    </h2>
-    <h3>{{ title }}</h3>
-    <div class="well">
-      <div class="pomodoro-timer" :style="colorFont">
-        <span>{{ min }}</span>:<span>{{ sec }}</span> <span>Time left of {{ this.pomodoroState }}</span>
+    <div class="timer">
+      <div class="timer--head">
+        <h2>
+          Pomodoro Timer
+        </h2>
+        <h2>
+        <button :disabled="state === 'started'" @click="start()">
+          <i class="glyphicon glyphicon-play"></i>
+        </button>
+        <button :disabled="state !== 'started'" @click="pause()">
+          <i class="glyphicon glyphicon-pause"></i>
+        </button>
+        <button :disabled="state !== 'started' && state !== 'paused'"
+          @click="stop()">
+          <i class="glyphicon glyphicon-stop"></i>
+        </button>
+        </h2>
+
+      </div>
+      <div class="timer--counter">
+        <div class="pomodoro-timer" :style="colorFont">
+          <h3>{{ min }}:{{ sec }} <br><span>Time left of {{ this.pomodoroState }}</span></h3>
+        </div>
+      </div>
+      <!-- <div class="well" :class="{ 'hidden': pomodoroState === 'work' }">
+        <img :src="'http://thecatapi.com/api/images/get?type=gif&size=med' + timestamp" />
+      </div> -->
+      <div class="timer--clock">
+        <div class="circle">
+          <div class="second" :style="rotateObj">&nbsp;</div>
+          <div class="minute" :style="minuteHeight"></div>
+        </div>
+        <h3>{{ title }}</h3>
       </div>
     </div>
-    <!-- <div class="well" :class="{ 'hidden': pomodoroState === 'work' }">
-      <img :src="'http://thecatapi.com/api/images/get?type=gif&size=med' + timestamp" />
-    </div> -->
-    <div class="well">
-      <div class="circle">
-        <div class="second" :style="rotateObj"></div>
-        <div class="minute" :style="minuteHeight"></div>
-      </div>
-
-    </div>
-
   </div>
-  <script src="index.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
