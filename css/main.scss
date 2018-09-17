@@ -1,7 +1,9 @@
 :root {
   --color: #fecea8;
   --background: #2a363b;
+  --red: #e84a5f;
 }
+$backgroundColor: #2a363b;
 * {
   box-sizing: border-box;
 }
@@ -70,13 +72,13 @@ h3 {
   display: inline-block;
   border-radius:50% 50%;
   width:250px;height:250px;
-  background:white;
+  background: lighten( $backgroundColor, 20%);
   .center-circle { // Time inside circle
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    z-index: 100;
+    z-index: 90;
     color: var(--background);
     margin: 0;
   }
@@ -85,16 +87,18 @@ h3 {
   display: inline-block;
   border-radius:50% 50%;
   width:250px;height:250px;
-  background:white;
+  background: transparent;
+  z-index: 100;
 }
 .second::after {
   content: '';
   position: absolute;
   width: 2px;
   height: 50%;
-  background: linear-gradient(red 60%, transparent 40%);
+  background: linear-gradient(var(--red) 60%, transparent 40%);
   bottom: 50%;
   left: 50%;
+  z-index: 100;
 }
 .minute {
   content: '';
@@ -106,5 +110,5 @@ h3 {
   border-radius:50% 50%;
   width:250px;height:250px;
   background: #ff847c;
-  opacity: .5;
+  z-index: 0;
 }
