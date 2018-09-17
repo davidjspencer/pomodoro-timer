@@ -34,8 +34,7 @@ h3 span {
     grid-column-start: 2; }
   .timer .timer--clock {
     grid-row-start: 3;
-    grid-column-start: 2;
-    text-align: center; }
+    grid-column-start: 2; }
 
 .circle {
   position: relative;
