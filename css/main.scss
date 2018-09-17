@@ -11,7 +11,7 @@ body {
 }
 #app {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
 h1 {
   font-size: 1.5em;
@@ -43,11 +43,14 @@ h3 {
     grid-column-start: 2;
     display: grid;
     align-items: center;
-
-    button {
+    .buttons {
       display: inline-block;
       float: left;
-      width: calc(100% / 3);
+      width: 100%;
+    }
+    button {
+      float: left;
+      width: calc(100% / 3); // bigger than 95%
       font-size: 2em;
       color: var(--color);
       border: 0px solid var(--color);

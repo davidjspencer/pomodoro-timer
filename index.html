@@ -16,7 +16,7 @@
         <h1>
           <span>Pomodoro </span>Timer
         </h1>
-        <h2>
+        <div class="buttons">
           <button :disabled="state === 'started'" @click="start()">
             &#9658;
           </button>
@@ -27,7 +27,7 @@
             @click="stop()">
             &#9632;
           </button>
-        </h2>
+        </div>
       </div>
       <div class="timer--clock">
         <div class="circle">
